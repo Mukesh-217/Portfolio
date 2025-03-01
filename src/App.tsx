@@ -18,6 +18,11 @@ import {
   File
 } from 'lucide-react';
 
+
+const getImagePath = (path: string) => {
+  return path.startsWith('http') ? path : `./img${path}`;
+};
+
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -40,7 +45,7 @@ function App() {
       {/* Navigation Bar */}
       <nav className="fixed w-full bg-slate-900/95 backdrop-blur-sm z-50 px-4 py-4">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <a href="/" className="text-white font-bold text-xl">Portfolio</a>
+          <a href="#about" className="text-white font-bold text-xl">Portfolio</a>
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
@@ -95,7 +100,7 @@ function App() {
           <div className="mb-8 flex justify-center">
             <div className="relative">
               <img 
-                src="../public/img/profile_img.jpg"
+                src={getImagePath('/profile_img.jpg')}
                 alt="Profile"
                 className="w-40 h-40 rounded-full border-4 border-white shadow-lg object-cover"
               />
@@ -120,7 +125,7 @@ function App() {
                 Resume
               </a>
               <a 
-                href="/cover-letter.pdf" 
+                href="https://drive.google.com/file/d/1sJZ5bgqazkALlRQ6YzK-7_lY_fiKq1jf/view?usp=sharing" 
                 className="flex items-center bg-slate-700 hover:bg-slate-600 px-4 py-2 rounded-lg transition-colors"
               >
                 <File size={18} className="mr-2" />
@@ -280,8 +285,8 @@ function App() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="bg-white rounded-xl shadow-lg overflow-hidden">
               <img 
-                src="../public/img/onlinehealth.jpeg"
-                alt="Enterprise Dashboard"
+                src={getImagePath('/onlinehealth.jpeg')}
+                alt="Enterprise Dashbo"
                 className="w-full h-48 object-cover"
               />
               <div className="p-6">
@@ -306,7 +311,7 @@ function App() {
             </div>
             <div className="bg-white rounded-xl shadow-lg overflow-hidden">
               <img 
-                src="../public/img/tictactoe.webp"
+                src={getImagePath('/tictactoe.webp')}
                 alt="E-commerce Platform"
                 className="w-full h-48 object-cover"
               />
@@ -321,11 +326,8 @@ function App() {
                   <span className="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm">Node.js</span>
                 </div>
                 <div className="flex space-x-4">
-                  <a href="https://github.com/Mukesh-217/Tic-Tac-Toe-Game-using-ReactJS" className="flex items-center text-slate-700 hover:text-slate-900">
+                  <a href="https://github.com/Mukesh-217/Tic-Tac-Toe-Game-using-React" className="flex items-center text-slate-700 hover:text-slate-900">
                     <Github size={18} className="mr-1" /> Code
-                  </a>
-                  <a href="#" className="flex items-center text-slate-700 hover:text-slate-900">
-                    <ExternalLink size={18} className="mr-1" /> Live Demo
                   </a>
                 </div>
               </div>
@@ -350,15 +352,12 @@ function App() {
                   <a href="https://github.com/Mukesh-217/Visualize-data-with-QuickSight" className="flex items-center text-slate-700 hover:text-slate-900">
                     <Github size={18} className="mr-1" /> Code
                   </a>
-                  <a href="#" className="flex items-center text-slate-700 hover:text-slate-900">
-                    <ExternalLink size={18} className="mr-1" /> Live Demo
-                  </a>
                 </div>
               </div>
             </div>
             <div className="bg-white rounded-xl shadow-lg overflow-hidden">
               <img 
-                src="../public/img/agricultureandaqua.jpg"
+                src={getImagePath('/agricultureandaqua.jpg')}
                 alt="E-commerce Platform"
                 className="w-full h-48 object-cover"
               />
@@ -386,7 +385,7 @@ function App() {
             </div>
             <div className="bg-white rounded-xl shadow-lg overflow-hidden">
               <img 
-                src="../public/img/imagereck.jpeg"
+                src={getImagePath('/imagereck.jpeg')}
                 alt="E-commerce Platform"
                 className="w-full h-48 object-cover"
               />
@@ -412,10 +411,61 @@ function App() {
                 </div>
               </div>
             </div>
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+              <img 
+                src={getImagePath('/gemini.webp')}
+                alt="E-commerce Platform"
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-slate-800 mb-2">Gemini Clone</h3>
+                <p className="text-slate-600 mb-4">
+                A fun and engaging Tic-Tac-Toe game built with ReactJS and NodeJS, featuring a sleek UI and real-time gameplay. Challenge friends and enjoy seamless interactions! 🎮✨
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm">React.js</span>
+                  <span className="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm">CSS</span>
+                  <span className="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm">Node.js</span>
+                  <span className="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm">Tailwind</span>
+                </div>
+                <div className="flex space-x-4">
+                  <a href="https://github.com/Mukesh-217/Gemini-Clone" className="flex items-center text-slate-700 hover:text-slate-900">
+                    <Github size={18} className="mr-1" /> Code
+                  </a>
+                  <a href="https://mukesh-217.github.io/Gemini-Clone/" className="flex items-center text-slate-700 hover:text-slate-900">
+                    <Github size={18} className="mr-1" /> Live Demo
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+              <img 
+                src={getImagePath('/tictactoe.webp')}
+                alt="E-commerce Platform"
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-slate-800 mb-2">Tic-Tac-Toe Game using ReactJS</h3>
+                <p className="text-slate-600 mb-4">
+                A simple and interactive Tic-Tac-Toe game built with ReactJS and NodeJS, allowing users to play against each other with a responsive UI.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm">React.js</span>
+                  <span className="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm">CSS</span>
+                  <span className="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm">Node.js</span>
+                  
+                </div>
+                <div className="flex space-x-4">
+                  <a href="https://github.com/Mukesh-217/Tic-Tac-Toe-Game-using-React" className="flex items-center text-slate-700 hover:text-slate-900">
+                    <Github size={18} className="mr-1" /> Code
+                  </a>
+                </div>
+              </div>
+            </div>
 
             <div className="bg-white rounded-xl shadow-lg overflow-hidden">
               <img 
-                src="../public/img/employability.jpeg"
+                src={getImagePath('/employability.jpeg')}
                 alt="E-commerce Platform"
                 className="w-full h-48 object-cover"
               />
@@ -776,7 +826,7 @@ function App() {
       <div className="floating-card p-6">
         <div className="flex flex-col items-center">
           <img
-            src="../public/img/aws.jpg"
+            src={getImagePath('/aws.jpg')}
             alt="AWS"
             className="w-24 h-24 rounded-full mb-4 border-4 border-blue-500"
           />
@@ -791,7 +841,7 @@ function App() {
       <div className="floating-card p-6">
         <div className="flex flex-col items-center">
           <img
-            src="../public/img/github.webp"
+            src={getImagePath('/github.webp')}
             alt="GitHub"
             className="w-24 h-24 rounded-full mb-4 border-4 border-gray-800"
           />
@@ -806,7 +856,7 @@ function App() {
       <div className="floating-card p-6">
         <div className="flex flex-col items-center">
           <img
-            src="../public/img/google.webp"
+            src={getImagePath('/google.webp')}
             alt="Google Cloud Platform"
             className="w-24 h-24 rounded-full mb-4 border-4 border-green-500"
           />
@@ -822,7 +872,7 @@ function App() {
       <div className="floating-card p-6">
         <div className="flex flex-col items-center">
           <img
-            src="../public/img/aws.jpg"
+            src={getImagePath('/aws.jpg')}
             alt="AWS"
             className="w-24 h-24 rounded-full mb-4 border-4 border-blue-500"
           />
@@ -837,7 +887,7 @@ function App() {
       <div className="floating-card p-6">
         <div className="flex flex-col items-center">
           <img
-            src="../public/img/github.webp"
+            src={getImagePath('/github.webp')}
             alt="GitHub"
             className="w-24 h-24 rounded-full mb-4 border-4 border-gray-800"
           />
@@ -852,7 +902,7 @@ function App() {
       <div className="floating-card p-6">
         <div className="flex flex-col items-center">
           <img
-            src="../public/img/google.webp"
+            src={getImagePath('/google.webp')}
             alt="Google Cloud Platform"
             className="w-24 h-24 rounded-full mb-4 border-4 border-green-500"
           />
@@ -902,7 +952,7 @@ function App() {
           </p>
           <div className="flex justify-center space-x-6">
             <a 
-              href="2100031981cse.h@gmail.com" 
+              href="mailto:2100031981cse.h@gmail.com"
               className="flex items-center bg-slate-700 hover:bg-slate-600 text-white px-6 py-3 rounded-lg transition-colors"
             >
               <Mail size={20} className="mr-2" />
